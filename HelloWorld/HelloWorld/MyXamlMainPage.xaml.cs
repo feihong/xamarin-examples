@@ -8,11 +8,11 @@ namespace HelloWorld
 	{
 		public MyXamlMainPage ()
 		{
-			InitializeComponent ();
+			InitializeComponent();
 		}
 
 		void OnButtonClicked(object sender, EventArgs e) {
-
+			helloLabel.Text = Greetings.GetGreeting ();
 		}
 	}
 }

@@ -22,7 +22,7 @@ namespace HelloWorld
 		static Random rand = new Random();
 
 		public static string GetGreeting() {
-			int index = rand.Next (values.Count);
+			int index = rand.Next(values.Count);
 			return values[index];
 		}
 	}

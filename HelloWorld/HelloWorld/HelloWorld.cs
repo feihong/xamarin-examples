@@ -7,8 +7,8 @@ namespace HelloWorld
 	{
 		public App ()
 		{
-			MainPage = new MyMainPage();
-//			MainPage = new MyXamlMainPage();
+//			MainPage = new MyMainPage();
+			MainPage = new MyXamlMainPage();
 		}
 
 		protected override void OnStart ()
