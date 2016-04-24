@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using Xamarin.Forms;
 
 namespace Tabs
@@ -10,13 +11,14 @@ namespace Tabs
 		{
 			InitializeComponent ();
 
-			ipPage.Appearing += (object sender, EventArgs e) => {
-				ipLabel.Text = "...";
-			};
-
 			luckyPage.Appearing += (object sender, EventArgs e) => {
 				Random rand = new Random();
-				luckyLabel.Text = $"{rand.Next(100)}";
+				IEnumerable<int> numbers = Enumerable.Range(0, 5).Select(x => rand.Next(100));
+				luckyLabel.Text = string.Join("  ", numbers);
+			};
+
+			ipPage.Appearing += (object sender, EventArgs e) => {
+				ipLabel.Text = "...";
 			};
 		}
 
