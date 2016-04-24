@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 
 namespace Tabs
@@ -11,14 +12,16 @@ namespace Tabs
 		{
 			InitializeComponent ();
 
-			luckyPage.Appearing += (object sender, EventArgs e) => {
+			luckyPage.Appearing += (sender, e) => {
 				Random rand = new Random();
 				IEnumerable<int> numbers = Enumerable.Range(0, 5).Select(x => rand.Next(100));
-				luckyLabel.Text = string.Join("  ", numbers);
+				luckyLabel.Text = string.Join(", ", numbers);
 			};
 
-			ipPage.Appearing += (object sender, EventArgs e) => {
-				ipLabel.Text = "...";
+			ipPage.Appearing += async (sender, e) => {
+				ipLabel.Text = "(Fetching IP address...)";
+				await Task.Delay(1000);
+				ipLabel.Text = "0.0.0.0";
 			};
 		}
 
