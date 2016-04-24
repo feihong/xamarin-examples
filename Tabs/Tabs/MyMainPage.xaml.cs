@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using System.Net;
+using System.Net.Http;
 using Xamarin.Forms;
 
 namespace Tabs
@@ -19,9 +21,12 @@ namespace Tabs
 			};
 
 			ipPage.Appearing += async (sender, e) => {
-				ipLabel.Text = "(Fetching IP address...)";
+				ipLabel.Text = "(fetching IP address...)";
 				await Task.Delay(1000);
-				ipLabel.Text = "0.0.0.0";
+
+				HttpClient client = new HttpClient();
+				HttpResponseMessage response = await client.GetAsync("http://ipecho.net/plain");
+				ipLabel.Text = await response.Content.ReadAsStringAsync();
 			};
 		}
 
