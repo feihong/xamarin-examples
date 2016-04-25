@@ -49,6 +49,10 @@ namespace Tabs
 				int index = rand.Next(0, greetings.Count);
 				return $"{x+1}. {greetings[index]}";
 			});
+
+			listView.ItemTapped += (sender, e) => {
+				DisplayAlert("Item tapped", e.Item.ToString(), "OK");
+			};
 		}
 
 		public void InitProperties() {
