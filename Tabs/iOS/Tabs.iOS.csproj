@@ -117,5 +117,6 @@
     <BundleResource Include="Resources\thumbsup.png" />
     <BundleResource Include="Resources\lightbulb.png" />
     <BundleResource Include="Resources\umbrella.png" />
+    <BundleResource Include="Resources\game-controller-a.png" />
   </ItemGroup>
 </Project>

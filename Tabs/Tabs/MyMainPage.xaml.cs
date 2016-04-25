@@ -8,14 +8,30 @@ using Xamarin.Forms;
 
 namespace Tabs
 {
+	
+
 	public partial class MyMainPage : TabbedPage
 	{
+		List<string> greetings = new List<string>{
+			"Hello World",
+			"Hola Mundo",
+			"ਸਤਿ ਸ੍ਰੀ ਅਕਾਲ ਦੁਨਿਆ",
+			"こんにちは世界",
+			"你好世界",
+			"Përshendetje Botë",
+			"Բարեւ, աշխարհ",
+			"হ্যালো দুনিয়া",
+			"Saluton mondo",
+			"გამარჯობა მსოფლიო",
+		};
+
 		public MyMainPage ()
 		{
 			InitializeComponent ();
 
-			luckyPage.Appearing += (sender, e) => {
-				Random rand = new Random();
+			Random rand = new Random();
+
+			luckyPage.Appearing += (sender, e) => {				
 				IEnumerable<int> numbers = Enumerable.Range(0, 5).Select(x => rand.Next(100));
 				luckyLabel.Text = string.Join(", ", numbers);
 			};
@@ -28,6 +44,11 @@ namespace Tabs
 				HttpResponseMessage response = await client.GetAsync("http://ipecho.net/plain");
 				ipLabel.Text = await response.Content.ReadAsStringAsync();
 			};
+
+			listView.ItemsSource = Enumerable.Range (0, 100).Select (x => {
+				int index = rand.Next(0, greetings.Count);
+				return $"{x+1}. {greetings[index]}";
+			});
 		}
 
 		public void InitProperties() {
