@@ -19,6 +19,9 @@ namespace Tabs.Droid
 
 			global::Xamarin.Forms.Forms.Init (this, bundle);
 
+			App.ScreenWidth = Resources.DisplayMetrics.WidthPixels;
+			App.ScreenHeight = Resources.DisplayMetrics.HeightPixels;
+
 			LoadApplication (new App ());
 		}
 	}

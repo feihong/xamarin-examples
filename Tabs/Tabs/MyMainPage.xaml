@@ -22,7 +22,7 @@
 	</ContentPage>
 	<ContentPage Title="List" Icon="game-controller-a.png">
 		<ContentPage.Padding>
-			0,20,0,0
+			<OnPlatform x:TypeArguments="Thickness" iOS="0, 20,  0, 0" />
 		</ContentPage.Padding>
 		<ListView x:Name="listView" />		
 	</ContentPage>
