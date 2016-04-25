@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Net;
 using System.Net.Http;
+using System.Diagnostics;
 using Xamarin.Forms;
 
 namespace Tabs
@@ -41,8 +42,13 @@ namespace Tabs
 				await Task.Delay(1000);
 
 				HttpClient client = new HttpClient();
-				HttpResponseMessage response = await client.GetAsync("http://ipecho.net/plain");
-				ipLabel.Text = await response.Content.ReadAsStringAsync();
+				try {
+					HttpResponseMessage response = await client.GetAsync("http://ipecho.net/plain");
+					ipLabel.Text = await response.Content.ReadAsStringAsync();
+				} catch (WebException ex) {
+					ipLabel.Text = $"({ex.Message})";
+					Debug.WriteLine(ex);
+				}
 			};
 
 			listView.ItemsSource = Enumerable.Range (0, 100).Select (x => {
