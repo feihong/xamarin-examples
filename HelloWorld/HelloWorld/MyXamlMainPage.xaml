@@ -2,20 +2,24 @@
 <ContentPage 
 	xmlns="http://xamarin.com/schemas/2014/forms" 
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-	x:Class="HelloWorld.MyXamlMainPage">
+	x:Class="HelloWorld.MyXamlMainPage"
+	Padding="0, 20, 0, 0">
 	<ContentPage.Content>
-		<StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+		<StackLayout Spacing="0" VerticalOptions="FillAndExpand">
+			<Label 
+				Text="Please enjoy this app I made for you"
+				FontFamily="Monospace"
+				XAlign="Center"
+				TextColor="Gray" />	
 			<Label 
 				x:Name="helloLabel"
 				Text="Hello World"
 				XAlign="Center"
-				FontSize="40"
-				FontFamily="Helvetica" />
-			<Button Text="Click me!" Clicked="OnButtonClicked" />
-			<Label 
-				Text="Please enjoy this app I made for you"
-				FontFamily="Monospace"
-				XAlign="Center" />			
+				FontSize="48"
+				FontFamily="Helvetica"
+				VerticalOptions="CenterAndExpand"
+				BackgroundColor="#B0E0E6" />
+			<Button Text="Click me!" Clicked="OnButtonClicked" />		
 		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
