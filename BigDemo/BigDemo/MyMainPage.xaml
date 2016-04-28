@@ -1,0 +1,23 @@
+﻿<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+                  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                  xmlns:local="clr-namespace:BigDemo;assembly=BigDemo"
+                  x:Class="BigDemo.MyMainPage">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Master Page" Padding="0, 20, 0, 0">
+        	<ContentPage.Content>
+        		<ListView x:Name="listView" />
+        	</ContentPage.Content>
+    	</ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+			<x:Arguments>
+				<ContentPage Title="Detail page">
+	            	<ContentPage.Content>
+	            		<Label Text="Welcome to this big demo" />
+	            	</ContentPage.Content>
+	            </ContentPage>
+	        </x:Arguments>
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
