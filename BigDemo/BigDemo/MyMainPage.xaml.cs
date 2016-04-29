@@ -6,8 +6,15 @@ using Xamarin.Forms;
 
 namespace BigDemo
 {
+//	struct ListItem {
+//		string Title;
+//		string Icon;
+//	};
+
 	public partial class MyMainPage : MasterDetailPage
 	{
+		
+
 		public MyMainPage ()
 		{
 			InitializeComponent ();

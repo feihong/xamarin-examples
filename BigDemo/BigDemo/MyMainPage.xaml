@@ -3,7 +3,9 @@
                   xmlns:local="clr-namespace:BigDemo;assembly=BigDemo"
                   x:Class="BigDemo.MyMainPage">
     <MasterDetailPage.Master>
-        <ContentPage Title="Master Page" Padding="0, 20, 0, 0">
+        <ContentPage Title="Master Page" 
+        			 Icon="navicon-round.png"
+        			 Padding="0, 20, 0, 0">
         	<ContentPage.Content>
         		<ListView x:Name="listView" />
         	</ContentPage.Content>
@@ -12,9 +14,12 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
 			<x:Arguments>
-				<ContentPage Title="Detail page">
+				<ContentPage Title="Welcome">
 	            	<ContentPage.Content>
-	            		<Label Text="Welcome to this big demo" />
+	            		<StackLayout VerticalOptions="Center">
+	            			<Label Text="欢迎光临！" XAlign="Center" FontSize="52" />
+	            			<Label Text="Tap the hamburger to view the list of demos" XAlign="Center" />
+	            		</StackLayout>
 	            	</ContentPage.Content>
 	            </ContentPage>
 	        </x:Arguments>
