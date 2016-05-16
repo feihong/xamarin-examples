@@ -8,6 +8,11 @@
 	<ContentPage.Content>
 		<StackLayout VerticalOptions="FillAndExpand">
 			<Label Text="Top label" HorizontalOptions="Center" />
+			<StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand">
+				<Label Text="A" HorizontalOptions="CenterAndExpand" />
+				<Label Text="B" HorizontalOptions="CenterAndExpand" />
+				<Label Text="C" HorizontalOptions="CenterAndExpand" />
+			</StackLayout>
 			<ListView x:Name="listView" VerticalOptions="FillAndExpand" />
 			<Label Text="Bottom label" HorizontalOptions="Center" />
 		</StackLayout>
