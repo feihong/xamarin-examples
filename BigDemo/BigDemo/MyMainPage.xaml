@@ -20,14 +20,7 @@
     <MasterDetailPage.Detail>
         <NavigationPage>
 			<x:Arguments>
-				<ContentPage Title="Welcome">
-	            	<ContentPage.Content>
-	            		<StackLayout VerticalOptions="Center">
-	            			<Label Text="欢迎光临！" XAlign="Center" FontSize="52" />
-	            			<Label Text="Tap the hamburger to view the list of demos" XAlign="Center" />
-	            		</StackLayout>
-	            	</ContentPage.Content>
-	            </ContentPage>
+				<local:WelcomePage />
 	        </x:Arguments>
         </NavigationPage>
     </MasterDetailPage.Detail>
