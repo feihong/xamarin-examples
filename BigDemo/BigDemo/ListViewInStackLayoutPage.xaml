@@ -1,7 +1,15 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
-<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="BigDemo.ListViewInStackLayoutPage"
-	Title="ListView in StackLayout">
+<ContentPage 
+	xmlns="http://xamarin.com/schemas/2014/forms" 
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+	x:Class="BigDemo.ListViewInStackLayoutPage"
+	Title="ListView in StackLayout"
+	Padding="0, 10, 0, 10">
 	<ContentPage.Content>
-		<Label Text="Yay!" />
+		<StackLayout VerticalOptions="FillAndExpand">
+			<Label Text="Top label" HorizontalOptions="Center" />
+			<ListView x:Name="listView" VerticalOptions="FillAndExpand" />
+			<Label Text="Bottom label" HorizontalOptions="Center" />
+		</StackLayout>
 	</ContentPage.Content>
 </ContentPage>
