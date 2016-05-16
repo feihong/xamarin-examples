@@ -6,20 +6,37 @@ using Xamarin.Forms;
 
 namespace BigDemo
 {
-//	struct ListItem {
-//		string Title;
-//		string Icon;
-//	};
+	public class ListItem {
+		public string Title { get; set; }
+		public string Icon { get; set; }
+	};
 
 	public partial class MyMainPage : MasterDetailPage
 	{
-		
+		IEnumerable<ListItem> items = new List<ListItem> {
+			new ListItem {
+				Title="Apricot",
+				Icon="lightbulb"
+			},
+			new ListItem {
+				Title="Banana",
+				Icon="lightbulb"
+			},
+			new ListItem {
+				Title="Cornucopia",
+				Icon="lightbulb"
+			},
+		};
 
 		public MyMainPage ()
 		{
 			InitializeComponent ();
 
-			listView.ItemsSource = Enumerable.Range (1, 10).Select (x => $"Option {x}");
+			items = items.Select (item => {
+				item.Icon = item.Icon + ".png";
+				return item;
+			});			
+			listView.ItemsSource = items;
 		}
 	}
 }

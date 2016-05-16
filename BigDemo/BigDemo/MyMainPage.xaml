@@ -5,9 +5,15 @@
     <MasterDetailPage.Master>
         <ContentPage Title="Master Page" 
         			 Icon="navicon-round.png"
-        			 Padding="0, 20, 0, 0">
-        	<ContentPage.Content>
-        		<ListView x:Name="listView" />
+        			 Padding="0, 30, 0, 0">
+        	<ContentPage.Content BackgroundColor="Black">
+        		<ListView x:Name="listView">
+	        		<ListView.ItemTemplate>
+	                    <DataTemplate>
+	                        <ImageCell Text="{Binding Title}" ImageSource="{Binding Icon}" />
+	                    </DataTemplate>
+	                </ListView.ItemTemplate>
+        		</ListView>
         	</ContentPage.Content>
     	</ContentPage>
     </MasterDetailPage.Master>
